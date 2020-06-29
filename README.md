@@ -1,6 +1,6 @@
 ## 1. clone repository
 ```
-git clone https://github.com/SVF-tools/SVF-example.git
+git clone https://github.com/canlockkeyin/SVF-example.git
 ```
 
 ## 2. Install SVF via npm
@@ -23,4 +23,10 @@ your_path_to_LLVM is `/home/samsung/node_modules/llvm-10.0.0.obj`.
 ```
 cmake -DSVF_DIR=your_path_to_SVF -DLLVM_DIR=your_path_to_LLVM
 make
+```
+
+## 4. emit IR for the file you want to analyze and run svf-ex on it
+```
+clang -emit-llvm -S analyze.c -o analyze.ll
+./bin/svf-ex analyze.ll
 ```
